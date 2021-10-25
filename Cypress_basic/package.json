@@ -1,0 +1,20 @@
+{
+  "name": "cypress_agilizei",
+  "version": "1.0.0",
+  "description": "Curso De Cypress Udemy",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [
+    "cypress",
+    "test",
+    "automation",
+    "e2e"
+  ],
+  "author": "Eduardo Luiz Zanotto",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.6.0"
+  }
+}
