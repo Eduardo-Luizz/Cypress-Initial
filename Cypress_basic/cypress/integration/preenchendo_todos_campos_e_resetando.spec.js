@@ -33,4 +33,25 @@ describe("Preenchendo e resetando o formulário", () => {
 
         cy.get("@submitButton").should("be.disabled");
     })
+
+    it.only("Preenche campos obrigatórios usando o comando de suporte", () => {
+        const customer = {
+            firstName: "João",
+            lastName: "Santos",
+            email: "joaosantos@example.com"
+        }
+
+        //Chamei a function criada nos commands e passei o parametro da const customer
+        cy.preencheCamposObrigatorios(customer)
+
+            //Verificando que o botão não está disabled
+            cy.get("button[type='submit']")
+            .as("submitButton")
+            .should("not.be.disabled");
+
+        //Limpei um dos campos que é obrigatório
+        cy.get("#agree").uncheck();
+
+        cy.get("@submitButton").should("be.disabled");
+    })
 })
